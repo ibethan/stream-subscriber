@@ -1,0 +1,26 @@
+#spring:
+#  profiles: local
+#  cloud:
+#    function:
+#      definition: input
+#    stream:
+#      bindings:
+#        intput-in-0:
+#          destination: my-message
+#  rabbitmq:
+#    addresses: localhost
+#    username: rabbit
+#    password: rabbit
+
+spring:
+  profiles: local
+  cloud:
+    stream:
+      bindings:
+        input:
+          binder: rabbit
+          destination: my-message
+  rabbitmq:
+    addresses: localhost
+    username: rabbit
+    password: rabbit
